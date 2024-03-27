@@ -2,8 +2,8 @@ import express from 'express';
 import axios from 'axios';
 
 const app = express();
-const port = 3000;
-const API_KEY = 'live_NQV5gGW2U49t6IJlrpH9FBmkRjKcUVflNiNOYkXTk8dAuu5CsYqDy63SzC6rurCE';
+const PORT = process.env.PORT || 3000;
+const API_KEY = process.env.API_KEY;
 
 app.use(express.static("public"));
 
@@ -24,5 +24,5 @@ app.get("/", async (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
+  console.log(`Server is running on port ${PORT}`);
 });
